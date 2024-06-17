@@ -1,0 +1,7 @@
+const { glob, tsLibrary } = require("../../build/bazed_lib/bazed");
+
+tsLibrary("js", {
+  srcs: glob("**/*.ts"),
+});
+
+module.exports = global.rules;

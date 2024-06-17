@@ -1,0 +1,12 @@
+const { glob, tsLibrary, fileSet } = require("../../build/bazed_lib/bazed");
+
+fileSet("resources", {
+  srcs: glob("resources/**/*"),
+});
+
+tsLibrary("ui", {
+  srcs: glob("**/*.{ts,tsx}"),
+  deps: ["//common/js:js", ":resources"],
+});
+
+module.exports = global.rules;

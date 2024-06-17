@@ -1,0 +1,8 @@
+const { tsLibrary, glob } = require("../../../build/bazed_lib/bazed");
+
+tsLibrary("common", {
+  srcs: glob("*.ts"),
+  deps: [],
+});
+
+module.exports = global.rules;

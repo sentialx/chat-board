@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  db:
+    image: bitnami/postgresql
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=licencjat
+    ports:
+      - 5432:5432
+    volumes:
+      - ./out/licencjat/db:/var/lib/postgresql/data
+
+  files:
+    image: nginx
+    ports:
+      - 3090:80
+    environment:
+      - NGINX_PORT=80
+    volumes:
+      - ./out/licencjat/files:/usr/share/nginx/html

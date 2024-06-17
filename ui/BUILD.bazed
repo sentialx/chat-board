@@ -1,0 +1,20 @@
+const { nextJs, glob, env } = require("@nersent/bazed-dev");
+
+env("env", {
+  file: ".env",
+});
+
+nextJs("ui", {
+  srcs: glob("src/**/*.*"),
+  deps: [
+    "//common/js",
+    "//common/ui",
+    "//common/auth/ui",
+    "//common/next",
+    "//eryk/licencjat/common",
+    ":env",
+  ],
+  publicEnvs: ["API_URL"],
+});
+
+module.exports = global.rules;

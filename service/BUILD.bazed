@@ -1,0 +1,56 @@
+const { tsLibrary, env, glob, execute, fileSet, writeFile } = require("@nersent/bazed-dev");
+
+function executeNode(name, opts) {
+    const mainSrc = `
+const moduleAlias = require('module-alias');
+const { resolve } = require('path');
+moduleAlias.addAliases({
+    '~': resolve('../../../'),
+});
+require(resolve(__dirname, "${opts.main}"));
+        `.trim();
+
+    writeFile(`create_main_wrapper_${name}`, {
+        content: mainSrc,
+        output: `main.bazed.js`,
+        copy: true,
+    })
+
+    execute(name, {
+        ...opts,
+        deps: [`:create_main_wrapper_${name}`, ...opts.deps],
+        command: `node main.bazed.js`,
+    });
+}
+
+tsLibrary("service", {
+    srcs: glob("**/*.{ts,tsx}"),
+    deps: [
+        "//common/js",
+        "//common/ui",
+        "//common/auth/ui",
+        "//common/nest",
+        "//eryk/licencjat/common",
+    ],
+})
+
+execute("compose", {
+    command: "docker-compose up --build -d",
+    srcs: [
+        "docker-compose.yaml",
+        ".dockerfile",
+    ],
+    parallel: true,
+})
+
+env("env", {
+    file: ".env",
+})
+
+executeNode("dev", {
+    deps: [":service", ":env"],
+    main: 'index.js',
+    parallel: true,
+})
+
+module.exports = global.rules;
