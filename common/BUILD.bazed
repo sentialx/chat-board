@@ -1,4 +1,4 @@
-const { tsLibrary, glob } = require("../../../build/bazed_lib/bazed");
+const { tsLibrary, glob } = require("@nersent/bazed");
 
 tsLibrary("common", {
   srcs: glob("*.ts"),

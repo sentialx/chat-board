@@ -8,7 +8,7 @@ import {
   Me as ApiMe,
   User as ApiUser,
   UserPost as ApiUserPost,
-} from "../../common/user";
+} from "~/common/user";
 import { AuthUserEntity } from "../auth/auth_user_entity";
 import { ConfigService } from "../config_service";
 import { MediaEntity } from "../media/media_entity";
@@ -18,7 +18,7 @@ import { UserEntity } from "../user/user_entity";
 import { CreateWorkspaceProperties, WorkspaceEntity } from "./workspace_entity";
 import { UserService } from "../user/user_service";
 import { RoleService } from "../role/role_service";
-import { Option } from "../../../../common/js/option";
+import { Option } from "~/common/js/option";
 
 export class WorkspaceService {
   constructor(

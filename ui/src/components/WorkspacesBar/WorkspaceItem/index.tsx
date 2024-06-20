@@ -6,7 +6,7 @@ import { useStore } from "../../../store/app_store_provider";
 
 import { StyledWorkspaceItem } from "./style";
 
-import { WorkspaceApi } from "~/eryk/licencjat/common";
+import { WorkspaceApi } from "~/common";
 
 interface ItemProps {
   workspace: WorkspaceApi;

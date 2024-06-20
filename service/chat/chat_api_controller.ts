@@ -9,6 +9,7 @@ import {
   MessageEvent,
   UseInterceptors,
   BadRequestException,
+  UploadedFile,
 } from "@nestjs/common";
 import { Observable } from "rxjs";
 import { FileInterceptor } from "~/common/nest/multipart/file_interceptor";

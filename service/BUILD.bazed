@@ -1,11 +1,11 @@
-const { tsLibrary, env, glob, execute, fileSet, writeFile } = require("@nersent/bazed-dev");
+const { tsLibrary, env, glob, execute, fileSet, writeFile } = require("@nersent/bazed");
 
 function executeNode(name, opts) {
     const mainSrc = `
 const moduleAlias = require('module-alias');
 const { resolve } = require('path');
 moduleAlias.addAliases({
-    '~': resolve('../../../'),
+    '~': resolve('../'),
 });
 require(resolve(__dirname, "${opts.main}"));
         `.trim();
@@ -30,7 +30,7 @@ tsLibrary("service", {
         "//common/ui",
         "//common/auth/ui",
         "//common/nest",
-        "//eryk/licencjat/common",
+        "//common",
     ],
 })
 

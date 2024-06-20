@@ -1,4 +1,4 @@
-const { nextJs, glob, env } = require("@nersent/bazed-dev");
+const { nextJs, glob, env } = require("@nersent/bazed");
 
 env("env", {
   file: ".env",
@@ -11,7 +11,7 @@ nextJs("ui", {
     "//common/ui",
     "//common/auth/ui",
     "//common/next",
-    "//eryk/licencjat/common",
+    "//common",
     ":env",
   ],
   publicEnvs: ["API_URL"],

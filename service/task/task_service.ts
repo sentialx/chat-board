@@ -7,8 +7,8 @@ import { MediaService } from "../media/media_service";
 import { CreateTaskProperties, TaskEntity } from "./task_entity";
 import { UserService } from "../user/user_service";
 import { RoleService } from "../role/role_service";
-import { Option } from "../../../../common/js/option";
-import { TaskApi, TaskStatus } from "../../common/task_api";
+import { Option } from "~/common/js/option";
+import { TaskApi, TaskStatus } from "~/common/task_api";
 
 export class TaskService {
   constructor(

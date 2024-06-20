@@ -10,7 +10,6 @@ export const ENV_SCHEMA = Joi.object({
   API_URL: Joi.string().required(),
   PORT: Joi.number().default(3000),
   OUT_PATH: Joi.string().required(),
-  OPENAI_ACCESS_TOKEN: Joi.string().required(),
   UI_URL: Joi.string().required(),
   JWT_SECRET: Joi.string().required(),
   COOKIE_SECRET: Joi.string().required(),
@@ -48,10 +47,6 @@ export class ConfigService implements OnModuleInit {
 
   public get outPath(): string {
     return resolve(this.env.get("OUT_PATH") as string);
-  }
-
-  public get openAiAccessToken(): string {
-    return this.env.get("OPENAI_ACCESS_TOKEN") as string;
   }
 
   public get hashingRounds(): number {

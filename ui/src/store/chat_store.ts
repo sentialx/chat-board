@@ -19,7 +19,7 @@ import {
   GetChatThreadWithUserRequest,
   GetChatThreadWithUserResponse,
   ApiUser,
-} from "~/eryk/licencjat/common";
+} from "~/common";
 import { AxiosResponse } from "axios";
 import { readBrowserFile } from "~/common/js/fs";
 import { randomString } from "~/common/js/random";

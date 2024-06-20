@@ -10,7 +10,7 @@ import { Popup, getPopupProps } from "../Popup";
 
 import { StyledEditTaskPopup } from "./style";
 
-import { TaskStatus } from "~/eryk/licencjat/common";
+import { TaskStatus } from "~/common";
 
 interface AutocompleteOption {
   title: string;

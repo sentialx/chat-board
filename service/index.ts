@@ -17,7 +17,6 @@ import { mbToBytes } from "~/common/js/fs";
 import { run } from "~/common/nest/lifecycle";
 import { createLogger } from "~/common/nest/logger";
 
-import { AdminApiController } from "./admin/admin_api_controller";
 import { AuthApiController } from "./auth/auth_api_controller";
 import { AuthGuard } from "./auth/auth_guard";
 import { AuthService } from "./auth/auth_service";
@@ -34,7 +33,6 @@ import { MediaAccessEntity } from "./media/media_access_entity";
 import { MediaApiController } from "./media/media_api_controller";
 import { MediaEntity } from "./media/media_entity";
 import { MediaService } from "./media/media_service";
-import { openAiClientProvider } from "./openai_client_provider";
 import { MeApiController } from "./user/me_api_controller";
 import { UserApiController } from "./user/user_api_controller";
 import { UserEntity } from "./user/user_entity";
@@ -82,7 +80,6 @@ const entities = [
     }),
   ],
   controllers: [
-    AdminApiController,
     ChatApiController,
     AuthApiController,
     UserApiController,
@@ -96,10 +93,6 @@ const entities = [
   providers: [
     ConfigService,
     ChatThreadGuard,
-    // ComfyService,
-    openAiClientProvider,
-    // ChatContextProvider,
-    // ComfyWorkflowProvider,
     ChatService,
     AuthService,
     UserService,

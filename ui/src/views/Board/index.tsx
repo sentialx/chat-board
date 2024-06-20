@@ -13,7 +13,7 @@ import {
   Role,
 } from "./style";
 
-import { RoleApi, TaskApi } from "~/eryk/licencjat/common";
+import { RoleApi, TaskApi } from "~/common";
 
 export type BoardViewProps = React.HTMLAttributes<HTMLDivElement> & {};
 

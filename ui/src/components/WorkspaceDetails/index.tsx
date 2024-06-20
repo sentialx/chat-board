@@ -21,7 +21,7 @@ import {
   Roles,
 } from "./style";
 
-import { WorkspaceApi, ApiUser, RoleApi } from "~/eryk/licencjat/common";
+import { WorkspaceApi, ApiUser, RoleApi } from "~/common";
 
 interface Props {
   workspace: WorkspaceApi;

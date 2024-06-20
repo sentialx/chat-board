@@ -6,18 +6,16 @@ import { EntityRepository, EntityManager, MikroORM } from "@mikro-orm/core";
 import { InjectRepository } from "@mikro-orm/nestjs";
 import { Inject, Injectable, Logger, NotFoundException } from "@nestjs/common";
 import { lookup as getMimeTypeFromExt } from "mime-types";
-import OpenAI from "openai";
 import * as sharp from "sharp";
 import { Sharp } from "sharp";
 import { v4 as uuid } from "uuid";
-import { Option } from "../../../../common/js/option";
-import { exists, getExtension } from "../../../../common/node/fs";
+import { Option } from "~/common/js/option";
+import { exists, getExtension } from "~/common/node/fs";
 
 import {
   Media as ApiMedia,
 } from "../../common";
 import { ConfigService } from "../config_service";
-import { OPEN_AI_CLIENT_TOKEN } from "../openai_client_provider";
 import { UserEntity } from "../user/user_entity";
 
 import { MediaAccessEntity } from "./media_access_entity";
@@ -61,7 +59,6 @@ export class MediaService {
     private readonly mediaRepo: EntityRepository<MediaEntity>,
     @InjectRepository(MediaAccessEntity)
     private readonly mediaAccessRepo: EntityRepository<MediaAccessEntity>,
-    @Inject(OPEN_AI_CLIENT_TOKEN) private readonly openAiClient: OpenAI,
   ) {}
 
   public loadImage(path: string): Sharp {

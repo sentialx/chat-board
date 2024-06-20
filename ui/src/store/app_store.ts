@@ -8,7 +8,7 @@ import { NavigationStore } from "./navigation_store";
 
 import { PopupStore } from "~/common/ui/store/popup_store";
 
-import { Media, TaskApi } from "~/eryk/licencjat/common";
+import { Media, TaskApi } from "~/common";
 import { WorkspaceStore } from "./workspace_store";
 import { SettingsStore } from "./settings_store";
 import { TaskStore } from "./task_store";

@@ -22,7 +22,7 @@ import {
   ChatMediaEvent as ApiChatMediaEvent,
   ChatMessageEvent as ApiChatMessageEvent,
   ChatEventType,
-} from "~/eryk/licencjat/common";
+} from "~/common";
 
 const Emojify = ({ children }: { children: string }) => {
   // return emoji.emojify(children);

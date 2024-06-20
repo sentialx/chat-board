@@ -7,7 +7,7 @@ import {
   InviteUserDto,
   RoleApi,
   WorkspaceApi,
-} from "~/eryk/licencjat/common";
+} from "~/common";
 import { ApiClient } from "./api_client";
 import { WorkspaceStore } from "./workspace_store";
 
