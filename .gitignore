@@ -29,4 +29,3 @@ bazel_stuff
 bazel_stuff,--verbose_failures
 .next
 .nx
-.env

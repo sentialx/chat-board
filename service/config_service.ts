@@ -19,11 +19,11 @@ export const ENV_SCHEMA = Joi.object({
 export const getDbConfig = (): Record<string, any> => {
   return {
     type: "postgresql",
-    host: process.env["POSTGRES_HOST"] as string,
-    port: parseInt(process.env["POSTGRES_PORT"] as string),
-    dbName: process.env["POSTGRES_DB"] as string,
-    user: process.env["POSTGRES_USER"] as string,
-    password: process.env["POSTGRES_PASSWORD"] as string,
+    host: process.env["AZURE_POSTGRESQL_HOST"] as string,
+    port: parseInt(process.env["AZURE_POSTGRESQL_PORT"] as string),
+    dbName: process.env["AZURE_POSTGRESQL_DATABASE"] as string,
+    user: process.env["AZURE_POSTGRESQL_USER"] as string,
+    password: process.env["AZURE_POSTGRESQL_PASSWORD"] as string,
   };
 };
 
