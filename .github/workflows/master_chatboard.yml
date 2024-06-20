@@ -31,9 +31,6 @@ jobs:
         with:
             version: 8
 
-      - name: Install deps
-        run: pnpm i
-
       - name: Login to Azure
         uses: azure/login@v1
         with:
