@@ -31,4 +31,4 @@ COPY ./ ./
 
 EXPOSE 8080
 
-CMD ["dumb-init", "start.sh"]
+CMD ["/bin/sh", "./start.sh"]
