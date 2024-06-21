@@ -17,15 +17,13 @@ RUN apk add --no-cache \
   vips
 WORKDIR /usr/src/app
 RUN npm install -g pnpm
-COPY package.json pnpm-lock.yaml ./
+COPY ./ ./
 RUN pnpm install --frozen-lockfile
 
 RUN apk add --no-cache dumb-init
 
 RUN npx bazed run //service
 RUN npx bazed run //ui:build
-
-COPY ./ ./
 
 EXPOSE 8080
 
