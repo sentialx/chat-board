@@ -42,7 +42,7 @@ export class AuthApiController {
       maxAge: token.expiresIn,
       httpOnly: true,
       secure: false,
-      sameSite: "lax",
+      sameSite: "none",
     });
     return { token };
   }
