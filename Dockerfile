@@ -22,6 +22,9 @@ RUN pnpm install --frozen-lockfile
 
 RUN apk add --no-cache dumb-init
 
+RUN npx bazed run //service
+RUN npx bazed run //ui:build
+
 COPY ./ ./
 
 EXPOSE 8080
