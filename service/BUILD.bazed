@@ -27,8 +27,6 @@ tsLibrary("service", {
     srcs: glob("**/*.{ts,tsx}"),
     deps: [
         "//common/js",
-        "//common/ui",
-        "//common/auth/ui",
         "//common/nest",
         "//common",
     ],
