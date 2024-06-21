@@ -1,0 +1,1 @@
+npx bazed run //service
