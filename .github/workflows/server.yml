@@ -54,6 +54,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'chatboard'
+          app-name: 'chatboard-server'
           slot-name: 'Production'
           images: '${{ steps.meta.outputs.tags }}'
