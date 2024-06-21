@@ -24,9 +24,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9215D0EB9285436299EAC5EC495132F8 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4CE04CE087204B1E80413DB8587662BD }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_421F306DE447429392541583C63504C1 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4964C9BF2DF746F0A12AA4B8D5F7BDB4 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6D6A085C4A2B4DFFAAE72750073D817A }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F61C9B0BDDA14D49B24CFE47DE53C679 }}
 
       - name: Log in to Docker Hub
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
