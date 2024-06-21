@@ -63,6 +63,12 @@ const entities = [
   imports: [
     MikroOrmModule.forRoot({
       ...getDbConfig(),
+      driverOptions: {
+        encrypt: true,
+        connection: {
+          ssl: true,
+        },
+      },
       entities,
       debug: process.env["NODE_ENV"] === "development",
       forceUtcTimezone: true,

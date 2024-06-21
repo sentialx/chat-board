@@ -7,7 +7,6 @@ import * as Joi from "joi";
 import { mkdirs } from "~/common/node/fs";
 
 export const ENV_SCHEMA = Joi.object({
-  API_URL: Joi.string().required(),
   PORT: Joi.number().default(3000),
   OUT_PATH: Joi.string().required(),
   UI_URL: Joi.string().required(),
