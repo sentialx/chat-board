@@ -1,0 +1,7 @@
+const { glob, tsLibrary } = require("@nersent/bazed");
+
+tsLibrary("next", {
+  srcs: glob("**/*.{ts,tsx}"),
+});
+
+module.exports = global.rules;

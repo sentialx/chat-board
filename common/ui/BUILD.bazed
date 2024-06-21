@@ -1,7 +1,10 @@
 const { glob, tsLibrary, fileSet } = require("@nersent/bazed");
 
 fileSet("resources", {
-  srcs: glob("resources/**/*"),
+  srcs: [
+    glob("resources/**/*.woff2"),
+    glob("resources/**/*.svg"),
+  ],
 });
 
 tsLibrary("ui", {

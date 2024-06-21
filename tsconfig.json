@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "strict": true,
-    "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
@@ -24,26 +23,24 @@
     "downlevelIteration": true,
     "noPropertyAccessFromIndexSignature": true,
     "module": "esnext",
-    "target": "es2021",
+    "target": "ESNext",
     "lib": [
       "esnext",
       "dom",
       "dom.iterable"
     ],
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
       "~/*": [
-        "./*"
-      ],
-      "@chatboard/*": [
         "./*"
       ]
     }
   },
   "include": [
     "./common/**/*.ts",
+    "./common/*.ts",
     "./common/js/*.ts",
     "./common/node/*.ts",
     "./common/**/*.bazed",

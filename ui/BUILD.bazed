@@ -1,20 +1,35 @@
-const { nextJs, glob, env } = require("@nersent/bazed");
+const { glob, env, fileSet, execute } = require("@nersent/bazed");
 
 env("env", {
   file: ".env",
 });
 
-nextJs("ui", {
-  srcs: glob("src/**/*.*"),
+fileSet("src", {
+  srcs: [
+    glob("src/**/*.*"),
+    "../tsconfig.json",
+    "./tsconfig.json",
+    "./next.config.js",
+  ],
   deps: [
     "//common/js",
     "//common/ui",
-    "//common/auth/ui",
     "//common/next",
     "//common",
-    ":env",
   ],
-  publicEnvs: ["API_URL"],
+  copy: true,
+});
+
+execute("build", {
+  command: "next build",
+  deps: [":src"],
+  outputs: ["./.next"],
+});
+
+execute("ui", {
+  command: 'next start',
+  deps: [":build", ":env"],
+  parallel: true,
 });
 
 module.exports = global.rules;
