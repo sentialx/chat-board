@@ -1,1 +1,1 @@
-npx bazed run //service
+npx bazed run //service:dev
