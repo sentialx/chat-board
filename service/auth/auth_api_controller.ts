@@ -40,8 +40,7 @@ export class AuthApiController {
     res.setCookie("sessionToken", token.token, {
       path: "/",
       maxAge: token.expiresIn,
-      httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "none",
     });
     return { token };
@@ -56,7 +55,7 @@ export class AuthApiController {
     await this.authService.register({ ...body });
     const token = await this.authService.login(body);
     res.setCookie("sessionToken", token.token, {
-      httpOnly: true,
+      secure: true,
       path: "/",
       maxAge: token.expiresIn,
     });
