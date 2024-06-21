@@ -27,7 +27,7 @@ execute("build", {
 });
 
 execute("ui", {
-  command: 'next start',
+  command: 'next start -p 8080',
   deps: [":build", ":env"],
   parallel: true,
 });
