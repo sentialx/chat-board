@@ -1,5 +1,3 @@
-FROM node:18-alpine as deps
-
 RUN apk add --no-cache \
   autoconf \
   automake \
@@ -20,12 +18,7 @@ RUN npm install -g pnpm
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --prod --frozen-lockfile
 
-FROM node:18-alpine as runner
 RUN apk add --no-cache dumb-init
-
-WORKDIR /usr/src/app
-
-COPY --from=deps /usr/src/app/node_modules ./node_modules
 
 COPY ./ ./
 
